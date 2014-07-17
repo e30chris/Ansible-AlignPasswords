@@ -14,7 +14,7 @@ _**note - using the same root password on all your servers is a terrible idea an
 
   * Download the playbook from
     * GitHub - [repo](https://github.com/e30chris/Ansible-AlignPassword)
-    * Galaxy - [repo]()
+    * Galaxy - [repo](https://galaxy.ansible.com/list#/roles/1134)
   * Create a branch to edit the variables for your environment
   
   ```
