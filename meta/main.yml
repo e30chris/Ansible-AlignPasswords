@@ -1,0 +1,10 @@
+---
+galaxy_info:
+  author: chris livermore
+  description: find and align passwords across servers
+  company: SimplifyMy.Biz
+  license: license MIT
+  min_ansible_version: 1.2
+  categories:
+    - system
+  dependencies: []

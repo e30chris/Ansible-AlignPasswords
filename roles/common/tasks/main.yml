@@ -1,0 +1,24 @@
+---
+# find the root password, login then update password to align
+
+- name: test possible passwords
+  local_action: shell sshpass -p {{ item }} ssh {{ user }}@{{ inventory_hostname }} date
+  register: pastpass
+  ignore_errors: true
+  with_items: 
+    - "{{ past_password_01 }}"
+    - "{{ past_password_02 }}"
+    - "{{ past_password_03 }}"    
+    - "{{ past_password_04 }}"
+    - "{{ past_password_05 }}"
+
+- set_fact: ansible_ssh_pass={{ item.item }}
+  with_items: pastpass.results
+  when: item.rc == 0
+
+- name: set the right password
+  shell: python -c 'import crypt; print crypt.crypt("{{ new_password }}", "$1$SomeSalt$")'
+  register: foo
+
+- name: set the right password
+  user: name=root password={{ foo.stdout }} group=root

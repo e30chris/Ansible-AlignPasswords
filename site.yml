@@ -1,0 +1,8 @@
+---
+# find all root passwords then update them to align
+- name: 
+  hosts: all
+  gather_facts: false
+  user: root
+  roles:
+    - common

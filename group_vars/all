@@ -1,0 +1,21 @@
+---
+# common variables for Ansible-AlignPassword
+# format for this file
+# variable: fact
+#
+
+# User the test & align password for
+user: root
+
+# Group the User belongs to
+group: root
+
+# Possible Passwords to test
+past_password_01: bmw325
+past_password_02: bmw525
+past_password_03: bmw735
+past_password_04: bmw750
+past_password_05: bmw850
+
+# New Password for all servers
+new_password: bmwm1
